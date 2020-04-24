@@ -1,0 +1,46 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+@model IEnumerable<Player>
+@{
+    ViewBag.Title = "Maple Soccer League";
+    int rank = 1;
+}
+
+<div class="col-md-12">
+    
+    <h4>Top Players</h4>
+
+    <div>
+        <p>List of top soccer players</p>
+    </div>
+
+    <div class="table-responsive-sm">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Goals</th>
+                    <th>Club</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Player p in Model)
+                {
+                    <tr>
+                        <td class="font-weight-bold">@rank</td>
+                        <td>@p.FirstName</td>
+                        <td>@p.LastName</td>
+                        <td>@p.Position</td>
+                        <td class="text-danger font-weight-bold">@p.Goals</td>
+                        <td>@p.Clubs.ClubName</td>
+                    </tr>
+                    rank = rank + 1;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

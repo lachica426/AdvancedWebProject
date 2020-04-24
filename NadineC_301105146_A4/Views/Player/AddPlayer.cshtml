@@ -1,0 +1,23 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+
+
+<h4>Add player</h4>
+
+<div>
+    <p>Add a new player</p>
+</div>
+<hr />
+
+<div class="col-md-4 margin-top">
+    <form asp-action="Edit" method="post">
+
+        @Html.Partial("PlayerPartial")
+
+        <button id="addPlayerSubmit" type="submit" class="btn btn-danger">Add Player</button>
+        <button id="cancelClubSubmit" asp-action="Index" asp-controller="Home" class="btn btn-danger">Cancel</button>
+
+    </form>
+</div>
+
+
+

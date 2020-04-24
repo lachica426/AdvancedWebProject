@@ -1,0 +1,25 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+@{
+    ViewBag.Title = "Maple Soccer League";
+}
+
+<h4>Add event</h4>
+
+<div>
+    <p>Add a new event</p>
+</div>
+<hr />
+
+<div class="col-md-4 margin-top">
+    <form asp-action="Edit" method="post">
+
+        @Html.Partial("EventPartial")
+
+        <button type="submit" class="btn btn-danger">Add Event</button>
+        <button asp-action="Index" asp-controller="Event" class="btn btn-danger">Cancel</button>
+
+    </form>
+</div>
+
+
+

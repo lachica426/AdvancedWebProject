@@ -1,0 +1,103 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+@model Club
+@{
+    ViewBag.Title = "Maple Soccer League";
+}
+
+<div class="bg-danger rounded text-center py-5 mb-4 my-2">
+    <div class="container">
+        <h1 class="font-weight-bold text-white">@Model.ClubName</h1>
+        <p class="overflow-hidden text-white">
+            @Model.Description
+        </p>
+    </div>
+</div>
+
+<table class="table-responsive-sm float-right">
+    <tr>
+        <td>
+            <form>
+                <a asp-action="Edit" class="btn btn-sm btn-warning"
+                   asp-route-clubID="@Model.ClubID">
+                    Edit
+                </a>
+
+                <a asp-action="Delete" class="btn btn-danger btn-sm"
+                   asp-route-clubID="@Model.ClubID">
+                    Delete
+                </a>
+            </form>
+        </td>
+    </tr>
+</table>
+<br />
+
+
+<div class="table-responsive-sm">
+    <table class="table table-bordered">
+        <tr>
+            <th>Club Name</th>
+            <td>@Model.ClubName</td>
+        </tr>
+        <tr>
+            <th>Club Name</th>
+            <td>@Model.ClubNickName</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <th>Year Founded</th>
+            <td>@Model.YearFounded</td>
+        </tr>
+        <tr>
+            <th>President</th>
+            <td>@Model.President</td>
+        </tr>
+        <tr>
+            <th>Coach</th>
+            <td>@Model.Coach</td>
+        </tr>
+    </table>
+</div>
+
+<br />
+<div>
+    <a asp-action="Index" asp-controller="Player" class="btn btn-danger float-right">Add a player</a>
+    <div>
+        <p><h4>List of Players</h4></p>
+    </div>
+</div>
+
+<div class="table-responsive-sm">
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>PlayerID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Position</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var playerList in Model.Players)
+            {
+            <tr>
+                <td>@playerList.PlayerID</td>
+                <td>@playerList.LastName</td>
+                <td>@playerList.FirstName</td>
+                <td>@playerList.Position</td>
+                <td>@playerList.Goals</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+

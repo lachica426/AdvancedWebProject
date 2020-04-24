@@ -1,0 +1,24 @@
+﻿@model LoginModel
+@{
+    ViewBag.Title = "Log In";
+    Layout = "_AdminLayout";
+}
+
+
+<body class="text-center">
+    
+    <form asp-action="Login" asp-controller="Account" method="post" class="form-signin">
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <input type="hidden" asp-for="ReturnUrl" />
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+        <label asp-for="Name" class="sr-only">Email address</label>
+        <input asp-for="Name" class="form-control" placeholder="Username">
+
+        <label asp-for="Password" class="sr-only">Password</label>
+        <input asp-for="Password" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2020</p>
+    </form>
+</body>

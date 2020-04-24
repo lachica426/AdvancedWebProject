@@ -1,0 +1,27 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+@model Club
+@{
+    ViewBag.Title = "Edit Club";
+}
+
+<h4>Edit club</h4>
+
+<div>
+    <p>Edit an existing soccer club</p>
+</div>
+<hr />
+
+<div class="col-md-4 margin-top">
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ClubID" />
+
+        @Html.Partial("AddClubPartial")
+
+        <button type="submit" class="btn btn-danger">Save</button>
+        <button asp-action="Index" asp-controller="Home" class="btn btn-danger">Cancel</button>
+
+    </form>
+</div>
+
+
+

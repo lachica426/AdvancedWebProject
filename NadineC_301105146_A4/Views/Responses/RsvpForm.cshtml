@@ -1,0 +1,51 @@
+﻿<!-- Name: Nadine Castro, Student Number: 301105146 -->
+@model Response
+
+@{
+    ViewBag.Title = "Maple Soccer League";
+}
+
+<h4>Register to @Model.Events.EventName</h4>
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-warning">@TempData["message"]</div>
+}
+<div>
+
+    <p></p>
+</div>
+<hr />
+
+<div class="col-md-4 margin-top">
+    <form asp-action="RsvpForm" asp-controller="Responses" method="post">
+
+        <input type="hidden" asp-for="EventID" value="@Model.Events.EventID" />
+
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <div><span asp-validation-for="Name" class="text-danger"></span></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <div><span asp-validation-for="Email" class="text-danger"></span></div>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone">Phone:</label>
+            <div><span asp-validation-for="Phone" class="text-danger"></span></div>
+            <input asp-for="Phone" type="datetime" class="form-control">
+        </div>
+
+
+        <button type="submit" class="btn btn-danger">Register to event</button>
+        <button asp-action="Index" asp-controller="Event" class="btn btn-danger">Cancel</button>
+
+    </form>
+</div>
+
+
+
